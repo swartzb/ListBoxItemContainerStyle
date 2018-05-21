@@ -1,0 +1,76 @@
+﻿<Window x:Class="ListBoxItemContainerStyle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListBoxItemContainerStyle"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="350"
+        DataContext="{Binding RelativeSource={x:Static RelativeSource.Self}}"
+        SizeToContent="Width">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="FontFamily"
+                    Value="Comic Sans MS" />
+            <Setter Property="FontSize"
+                    Value="14" />
+            <Setter Property="Margin"
+                    Value="6" />
+        </Style>
+    </Window.Resources>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <HeaderedContentControl>
+                <HeaderedContentControl.Header>
+                    <TextBlock>ListBox</TextBlock>
+                </HeaderedContentControl.Header>
+                <ListBox x:Name="lb"
+                         ItemsSource="{Binding Path=MyModel}"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Top" />
+            </HeaderedContentControl>
+            <HeaderedContentControl x:Name="hcc1"
+                                    Grid.Row="1">
+                <HeaderedContentControl.Header>
+                    <TextBlock>ListBox Control Template</TextBlock>
+                </HeaderedContentControl.Header>
+            </HeaderedContentControl>
+            <HeaderedContentControl x:Name="hcc2"
+                                    Grid.Row="2">
+                <HeaderedContentControl.Header>
+                    <TextBlock>ListBox ItemsPanelTemplate</TextBlock>
+                </HeaderedContentControl.Header>
+            </HeaderedContentControl>
+            <HeaderedContentControl x:Name="hcc3"
+                                    Grid.Row="3">
+                <HeaderedContentControl.Header>
+                    <TextBlock>ListBox ItemTemplate</TextBlock>
+                </HeaderedContentControl.Header>
+            </HeaderedContentControl>
+            <HeaderedContentControl x:Name="hcc4"
+                                    Grid.Row="4">
+                <HeaderedContentControl.Header>
+                    <TextBlock>ListBox ItemContainerStyle</TextBlock>
+                </HeaderedContentControl.Header>
+            </HeaderedContentControl>
+            <HeaderedContentControl x:Name="hcc5"
+                                    Grid.Row="5">
+                <HeaderedContentControl.Header>
+                    <TextBlock>ListBoxItem Control Template</TextBlock>
+                </HeaderedContentControl.Header>
+            </HeaderedContentControl>
+        </Grid>
+
+    </ScrollViewer>
+</Window>
