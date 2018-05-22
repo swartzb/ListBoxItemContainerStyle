@@ -63,6 +63,7 @@ namespace ListBoxItemContainerStyle
                 // Get the XAML for the template.
                 XmlWriterSettings settings = new XmlWriterSettings();
                 settings.Indent = true;
+                settings.IndentChars = new String(' ', 4);
                 settings.NewLineOnAttributes = true;
                 StringBuilder sb = new StringBuilder();
                 XmlWriter writer = XmlWriter.Create(sb, settings);
